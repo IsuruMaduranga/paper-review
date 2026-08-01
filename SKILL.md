@@ -1,5 +1,5 @@
 ---
-name: paper-review
+name: paper-preflight
 description: >-
   Review an academic paper (LaTeX, Markdown, or plain text) across seven
   dimensions — signs of AI-generated writing, clarity, academic claims,
@@ -16,7 +16,7 @@ metadata:
   version: "0.1.0"
 ---
 
-# paper-review
+# paper-preflight
 
 Two modes. **Review** (the default) analyzes a paper and writes a findings report —
 it changes nothing. **Fix** applies findings from that report, and runs only when the
@@ -122,7 +122,7 @@ elsewhere, and the finding should list every site.
 
 ### 5. Report
 
-Write `paper-review-report.md` into the same directory as the paper (if not writable,
+Write `paper-preflight-report.md` into the same directory as the paper (if not writable,
 the working directory):
 
 ```markdown

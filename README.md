@@ -1,4 +1,4 @@
-# paper-review
+# paper-preflight
 
 An [Agent Skill](https://agentskills.io/specification) that reviews academic papers —
 LaTeX, Markdown, or plain text — across seven dimensions:
@@ -34,22 +34,22 @@ The repo root is the skill directory (per the spec: `SKILL.md` + `references/` +
 **Skills CLI (cross-harness):**
 
 ```
-npx skills add IsuruMaduranga/paper-review
+npx skills add IsuruMaduranga/paper-preflight
 ```
 
 **Claude Code (plugin):**
 
 ```
-/plugin marketplace add IsuruMaduranga/paper-review
-/plugin install paper-review@paper-review
+/plugin marketplace add IsuruMaduranga/paper-preflight
+/plugin install paper-preflight@paper-preflight
 ```
 
-The skill is then invoked as `/paper-review:paper-review`.
+The skill is then invoked as `/paper-preflight:paper-preflight`.
 
 **Claude Code (personal skill):**
 
 ```
-ln -s /path/to/paper-review ~/.claude/skills/paper-review   # or cp -R
+ln -s /path/to/paper-preflight ~/.claude/skills/paper-preflight   # or cp -R
 ```
 
 **Codex / Cursor / other harnesses without skill support:** point your rules file
@@ -59,11 +59,11 @@ checklists into the tool's instruction mechanism.
 ## Use
 
 ```
-/paper-review latex/main.tex              # full review, all seven categories
-/paper-review latex/main.tex grammar venue   # only GR + VC
+/paper-preflight latex/main.tex              # full review, all seven categories
+/paper-preflight latex/main.tex grammar venue   # only GR + VC
 # "humanize this paper"                   → AI category
 # "camera-ready check"                    → VC + GR + CIT
-# read paper-review-report.md, decide what you agree with
+# read paper-preflight-report.md, decide what you agree with
 # then: "apply F3 F7 F12"  or  "apply high only"  or  "apply all"
 ```
 

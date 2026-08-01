@@ -1,5 +1,5 @@
 #!/bin/sh
-# mechanical-checks.sh — deterministic LaTeX checks for the paper-review skill.
+# mechanical-checks.sh — deterministic LaTeX checks for the paper-preflight skill.
 # Usage: mechanical-checks.sh <main.tex>
 # Prints candidate issues, one per line, prefixed with a category code (GR/CIT/VC).
 # Output is triage INPUT for the reviewing agent, not findings: every line must be
@@ -9,7 +9,7 @@ set -u
 MAIN="${1:?usage: mechanical-checks.sh <main.tex>}"
 [ -f "$MAIN" ] || { echo "error: $MAIN not found" >&2; exit 1; }
 DIR=$(dirname "$MAIN")
-TMP="${TMPDIR:-/tmp}/paper-review-$$"
+TMP="${TMPDIR:-/tmp}/paper-preflight-$$"
 mkdir -p "$TMP"
 trap 'rm -rf "$TMP"' EXIT
 
@@ -28,7 +28,7 @@ strip_comments() { # $1 = file -> stripped copy on stdout, line numbers preserve
   sed -E 's/([^\\])%.*/\1/; s/^%.*//' "$1"
 }
 
-echo "== paper-review mechanical checks: $FILES"
+echo "== paper-preflight mechanical checks: $FILES"
 for f in $FILES; do strip_comments "$f"; done > "$TMP/stripped_all"
 
 # --- VC: documentclass mode ----------------------------------------------------
