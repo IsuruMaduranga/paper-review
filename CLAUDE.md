@@ -15,7 +15,11 @@ The repo root IS the skill directory: `SKILL.md` + `references/` + `scripts/`.
 
 ## Local install is a symlink — edits are live
 
-`~/.claude/skills/paper-review` is a **symlink to this repo**. Consequences:
+(Author's dev setup — if you installed this skill via `npx skills add`, this section
+doesn't apply to your copy.)
+
+On the author's machine, `~/.claude/skills/paper-review` is a **symlink to this
+repo**. Consequences:
 
 - Any edit here is picked up by new Claude Code sessions immediately; there is no
   reinstall or cache-refresh step (unlike the plugin system).
