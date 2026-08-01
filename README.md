@@ -37,6 +37,15 @@ The repo root is the skill directory (per the spec: `SKILL.md` + `references/` +
 npx skills add IsuruMaduranga/paper-review
 ```
 
+**Claude Code (plugin):**
+
+```
+/plugin marketplace add IsuruMaduranga/paper-review
+/plugin install paper-review@paper-review
+```
+
+The skill is then invoked as `/paper-review:paper-review`.
+
 **Claude Code (personal skill):**
 
 ```
