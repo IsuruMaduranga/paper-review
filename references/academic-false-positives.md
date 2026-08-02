@@ -10,6 +10,10 @@ as **low** severity with a note that it may be intentional.
   contribution voice. Not significance inflation.
 - "To the best of our knowledge, X is the first..." — the accepted hedged-priority claim.
 - "The remainder of this paper is organized as follows" — venue convention, leave it.
+- Conventional signposting: "In this section, we describe...", "We now turn to...",
+  "As discussed in Section 3" — standard academic navigation, not chatty announcement.
+- "state-of-the-art" — technical when naming the best published result or backed by the
+  paper's own comparison table; a tell only as unevaluated self-praise.
 - Explicit contribution lists ("Our contributions are threefold") — flag only if the
   three items are padding, not because there are three.
 - Limitations-section hedging — hedges are the point of that section.
@@ -40,6 +44,10 @@ Flag these only when used as decoration, never when used as technical terms:
   applied to something the related-work section shows is not new.
 - *framework, pipeline, architecture* — fine as concrete referents to a system being
   described; a tell only when cycled as synonyms for one thing.
+- Frozen terms of art — never synonym-swap these in rewrites, even to fix elegant
+  variation: *ablation study* (not "component analysis"), *baseline* vs *benchmark*
+  (different things, not interchangeable), *corpus* vs *dataset* (a corpus is the
+  linguistic-specific term). Repetition of the correct term of art is correct.
 
 ## Structure and formatting
 
@@ -64,7 +72,11 @@ Flag these only when used as decoration, never when used as technical terms:
 
 ## Human-writing signals to preserve, not "fix"
 
-- Varied sentence length, including very short sentences.
+- Varied sentence length, including very short sentences — one clipped sentence landing
+  a point is emphasis, not staccato drama (that needs a run of them).
+- A single deliberate hedge on the authors' interpretation of their own results
+  ("we suspect this reflects...") — informed speculation, clearly marked, is normal
+  Discussion-section writing, not speculative gap-filling.
 - First-person singular in acknowledgments; idiosyncratic phrasing; dry humor.
 - Repetition of the *correct technical term* — do not introduce synonyms to reduce
   repetition; that would create elegant variation.

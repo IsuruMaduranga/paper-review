@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "paper-preflight",
   "description": "Seven-dimension academic-paper reviewer — AI-writing signs, clarity, academic claims, grammar & consistency, citation hygiene, structure & argumentation, venue compliance — with a report-first / fix-on-approval workflow.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "IsuruMaduranga",
     "url": "https://github.com/IsuruMaduranga"

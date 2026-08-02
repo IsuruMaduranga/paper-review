@@ -30,7 +30,34 @@ without a "(Section~N)" pointer. A pointer fixes it; absence of one is the findi
 introduces new results (results belong in Results). Note-level unless egregious.
 
 **Roadmap drift.** If the paper has an "organized as follows" roadmap, its claims must
-match the actual section order and content.
+match the actual section order and content. The same applies at section level: an
+opening sentence enumerating topics ("we discuss X, Y, and Z") must match what the
+subsections actually cover.
+
+**Unaddressed obvious objection.** A point where a skeptical reader would immediately
+ask "but what about...?" — an evident confound, an alternative explanation, a threat to
+the central claim — and the paper never raises it anywhere, including Limitations.
+Addressing it briefly anywhere (even an appendix) counts as delivery.
+
+**Motivation before methods.** The intro presents the "how" before any "why" — the
+approach is described before the reader has a reason to care, and no motivation appears
+elsewhere in the intro. Methods papers may foreground the technique briefly, but the
+motivation must still arrive within the intro.
+
+**Conclusion that doesn't close the loop, or oversells.** Two failure modes: the
+conclusion never returns to the question the introduction posed (pure results
+restatement), or it introduces broader practical implications that appear nowhere else
+and that the results don't support. Implications explicitly framed as speculative
+future work are fine.
+
+**Body repetition without new insight.** The same point restated later in the body with
+nothing added — e.g., related-work framing repeated nearly verbatim in the discussion.
+The abstract/intro/conclusion echo is structural convention, not repetition (see false
+positives).
+
+**Section-boundary jumps.** The end of one section gives no bridge into the next and
+the topic shifts abruptly. Low severity, and only where the sections are meant to build
+on each other — parallel case studies or independent experiment suites need no bridges.
 
 ## False positives — do not flag
 
@@ -41,11 +68,17 @@ match the actual section order and content.
 - Deliberate suspense structure ("we return to this in Section 6") with an explicit
   pointer.
 - Short linking paragraphs whose job is transition, not argument.
+- The conclusion echoing the abstract's core result, or the intro's preview matching
+  the results in more detail — structurally required repetition, not padding.
+- An objection or caveat handled anywhere in the paper, however briefly — delivery
+  elsewhere (including an appendix) counts.
 
 ## Severity
 
 - **High**: a promise with no delivery anywhere in the paper; a contribution item the
-  paper does not substantiate.
+  paper does not substantiate; an unaddressed obvious objection to the central claim.
 - **Medium**: pointless related-work paragraphs; orphaned float; forward reference
-  with no pointer; roadmap that misdescribes a section.
-- **Low**: section imbalance; undersold result; transition-paragraph nitpicks.
+  with no pointer; roadmap that misdescribes a section; methods with no motivation in
+  the intro; a conclusion introducing unsupported implications.
+- **Low**: section imbalance; undersold result; transition-paragraph nitpicks;
+  section-boundary jumps; body repetition without new insight.

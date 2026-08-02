@@ -46,6 +46,11 @@ if [ -n "$BIBS" ]; then
   comm -23 "$TMP/cited" "$TMP/bibkeys" | sed 's/^/CIT cite key not in any .bib: /'
   comm -13 "$TMP/cited" "$TMP/bibkeys" | sed 's/^/CIT bib entry never cited: /'
   sort "$TMP/bibkeys" | uniq -d | sed 's/^/CIT duplicate bib key: /'
+  # Tracking/referral residue in URLs (utm_source=chatgpt.com is a paste-from-chatbot tell)
+  grep -nE 'utm_(source|medium|campaign)=' $BIBS | sed 's/^/CIT tracking parameter in bib URL: /'
+  # doi fields that contain no actual DOI (every DOI starts with "10.")
+  grep -nE '^[[:space:]]*doi[[:space:]]*=' $BIBS | grep -v '10\.' \
+    | sed 's/^/CIT doi field without a 10.* DOI: /'
 else
   echo "CIT note: no .bib files found next to $MAIN (skipping cite/bib checks)"
 fi
@@ -62,7 +67,7 @@ uniq -d "$TMP/labels" | sed 's/^/VC duplicate label: /'
 # --- VC: draft debris ------------------------------------------------------------
 # Rendered text (high concern) and comments (low concern: often gates missing content).
 for f in $FILES; do
-  strip_comments "$f" | grep -nE 'TODO|FIXME|XXX|TBD|\[REF\]|\?\?' \
+  strip_comments "$f" | grep -nE 'TODO|FIXME|XXX|TBD|\[REF\]|\?\?|\[[Ii]nsert [^]]*\]|\[[Yy]our [^]]*\]' \
     | sed "s|^|VC draft marker (renders) $f:|"
   grep -nE '(^|[^\\])%.*(TODO|FIXME|XXX|TBD)' "$f" \
     | sed "s|^|VC draft marker (in comment) $f:|"

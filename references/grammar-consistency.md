@@ -35,6 +35,10 @@ against the false positives below before reporting.
   exempt, per the shared false-positives file).
 - **LaTeX spacing**: missing `~` before `\ref`/`\cite` (line-breakable references),
   `\eg`/`e.g.,` style drift.
+- **Misdirected cross-reference**: the `\ref` resolves (so the mechanical check passes)
+  but the prose describes the wrong target — "see Table~2 for hyperparameters" when
+  Table 2 holds dataset statistics. Flag only when the mismatch is unambiguous from
+  reading both sites; a loose pointer that is broadly right is not a finding.
 
 ## False positives — do not flag
 
@@ -50,7 +54,7 @@ against the false positives below before reporting.
 ## Severity
 
 - **High**: a grammar error that changes or obscures meaning; a cross-artifact naming
-  mismatch within one table/figure.
+  mismatch within one table/figure; a misdirected cross-reference.
 - **Medium**: agreement/article/dangling-modifier errors; spelling or hyphenation drift
   with 2+ minority sites; capitalization drift of a coined term.
 - **Low**: single-site drift; missing `~`; tense wobble; number-style inconsistency.

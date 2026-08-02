@@ -37,6 +37,11 @@ number), "in the context of" (when deletable), "with respect to" (→ "for"/"on"
 **Hedging stacks.** Two or more hedges on one claim: "may potentially suggest",
 "could possibly indicate", "seems to perhaps". One hedge per claim, chosen deliberately.
 
+**False completeness.** An enumeration phrased as exhaustive when it is a sample:
+"we evaluate on GLUE, SQuAD" implying that is the full set → "on benchmarks such as
+GLUE and SQuAD" (or list the full set). Do not flag when the items really are the
+complete set.
+
 ## Discourse-level
 
 **Ambiguous *this/it/these*.** A sentence opening with bare "This shows..." where two or
@@ -53,6 +58,22 @@ stance.
 words (often elegant variation at sentence scale): "X improves accuracy. This gain in
 performance demonstrates that X is beneficial."
 
+**Overlong paragraphs.** A paragraph past ~200 words or ~8 sentences with no break —
+usually two or more points sharing one paragraph. Split at the point boundary.
+
+**Connective standing in for a topic sentence.** A paragraph whose first sentence is
+only a transition ("Moreover,", "Building on this,") with no claim attached. The first
+sentence should state what the paragraph argues.
+
+**Circular definition.** A load-bearing term defined by itself or a near-synonym:
+"Robustness is the property of being robust to perturbations." The definition must add
+information the term alone doesn't carry.
+
+**Mechanism before purpose.** A section or subsection that opens with an equation,
+algorithm, or procedural detail before saying what it is for. The first sentence or two
+should state the goal; the "how" follows. (Whether the *intro* motivates the method at
+all is ST's motivation check; this is the local, per-section version.)
+
 (Abstract–body / promise–delivery checking lives in the structure category, `ST` —
 see `structure-argumentation.md`.)
 
@@ -61,5 +82,6 @@ see `structure-argumentation.md`.)
 - **High**: a sentence a careful reader must re-read to parse; ambiguous antecedent on a
   load-bearing claim.
 - **Medium**: nominalization, filler, hedging stacks, buried claims, overlong multi-job
-  sentences.
-- **Low**: mild wordiness; a passive that would merely read better active.
+  sentences; circular definition of a load-bearing term; mechanism before purpose.
+- **Low**: mild wordiness; a passive that would merely read better active; overlong
+  paragraphs; connective-only openers; false completeness.

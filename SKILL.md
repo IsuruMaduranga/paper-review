@@ -13,7 +13,7 @@ description: >-
 license: MIT
 metadata:
   author: IsuruMaduranga
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # paper-preflight
@@ -71,10 +71,11 @@ fenced code blocks and analyze everything else.
 
 Run `scripts/mechanical-checks.sh <main.tex>` (from this skill's `scripts/`
 directory). It prints candidate issues prefixed with a category code: cite keys
-missing from the `.bib`, never-cited bib entries, `\ref` targets without labels,
-draft markers, colored placeholder macros still used in the body, doubled words,
-curly quotes, and the documentclass mode (review/final/preprint) that VC findings
-must reference. Its output is **triage input, not findings**: check every line
+missing from the `.bib`, never-cited bib entries, tracking parameters and DOI-less
+`doi` fields in the `.bib`, `\ref` targets without labels, draft markers and unfilled
+`[Insert ...]` placeholders, colored placeholder macros still used in the body,
+doubled words, curly quotes, and the documentclass mode (review/final/preprint) that
+VC findings must reference. Its output is **triage input, not findings**: check every line
 against the category's false-positive list; drop non-prose artifacts (tikz node
 names, table column specs) and macros whose definition shows they render normally.
 If the script cannot run, do the equivalent greps manually.
